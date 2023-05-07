@@ -1,5 +1,9 @@
+html, body {
+  background-color: #212529 !important;
+  color: #FFF !important
+}
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -18,8 +22,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -36,3 +40,8 @@
     transform: rotate(360deg);
   }
 }
+
+.modal-header .modal-title, .modal-body p {
+  color: #333333;
+}
+
