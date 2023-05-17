@@ -32,6 +32,7 @@ export const BusInfo = ({ setFieldValue }) => {
       <div className="mb-2">
         <label className="form-label">Bus Image</label>
         <input
+        accept="image/png, image/jpeg"
           className="form-control"
           onChange={(event) => readImage(event, (result) => setFieldValue("bus_image", result))}
           type="file"
@@ -53,6 +54,7 @@ export const Driver = ({setFieldValue}) => <>
     <div className="mb-2">
         <label className="form-label">Bus Image</label>
         <input
+          accept="image/png, image/jpeg"
           className="form-control"
           onChange={(event) => readImage(event, (result) => setFieldValue("driver_image", result))}
           type="file"
@@ -73,6 +75,7 @@ export const Conductor = ({setFieldValue}) => <>
     <div className="mb-2">
         <label className="form-label">Bus Image</label>
         <input
+            accept="image/png, image/jpeg"
           className="form-control"
           onChange={(event) => readImage(event, (result) => setFieldValue("conductor_image", result))}
           type="file"
