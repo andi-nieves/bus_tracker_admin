@@ -15,9 +15,9 @@ const readImage = (event, onSuccess = () => {}) => {
 export const BusInfo = ({ setFieldValue, item }) => {
   return (
     <>
-    <div className="d-flex justify-content-center">
+    {item?.id && <div className="d-flex justify-content-center">
         <img style={{ maxHeight: 200, maxWidth: 200 }} src={`http://${SERVER_ADDED}/images/bus-${item.id}.png?${Date.now()}`} />
-    </div>
+    </div>}
       
       <div className="mb-2">
         <label className="form-label">Bus ID</label>
@@ -49,9 +49,9 @@ export const BusInfo = ({ setFieldValue, item }) => {
 };
 
 export const Driver = ({setFieldValue, item}) => <>
-    <div className="d-flex justify-content-center">
+    {item?.id && <div className="d-flex justify-content-center">
         <img style={{ maxHeight: 200, maxWidth: 200 }} src={`http://${SERVER_ADDED}/images/driver-${item.id}.png?${Date.now()}`} />
-    </div>
+    </div>}
     <div className="mb-2">
       <label className="form-label">Driver's Fulname</label>
       <Field className="form-control" name="driver_name" type="text" />
@@ -73,9 +73,9 @@ export const Driver = ({setFieldValue, item}) => <>
 
 
 export const Conductor = ({setFieldValue, item}) => <>
-<div className="d-flex justify-content-center">
+    {item?.id && <div className="d-flex justify-content-center">
         <img style={{ maxHeight: 200, maxWidth: 200 }} src={`http://${SERVER_ADDED}/images/conductor-${item.id}.png?${Date.now()}`} />
-    </div>
+    </div>}
     <div className="mb-2">
       <label className="form-label">Conductor's Fulname</label>
       <Field className="form-control" name="conductor_name" type="text" />
