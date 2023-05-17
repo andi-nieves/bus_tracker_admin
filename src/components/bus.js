@@ -1,5 +1,7 @@
 import { Field } from "formik";
 
+import { SERVER_ADDED } from "../client"
+
 const readImage = (event, onSuccess = () => {}) => {
   const fileReader = new FileReader();
   fileReader.onload = () => {
@@ -10,9 +12,13 @@ const readImage = (event, onSuccess = () => {}) => {
   fileReader.readAsDataURL(event.target.files[0]);
 };
 
-export const BusInfo = ({ setFieldValue }) => {
+export const BusInfo = ({ setFieldValue, item }) => {
   return (
     <>
+    <div className="d-flex justify-content-center">
+        <img style={{ maxHeight: 200, maxWidth: 200 }} src={`http://${SERVER_ADDED}/images/bus-${item.id}.png?${Date.now()}`} />
+    </div>
+      
       <div className="mb-2">
         <label className="form-label">Bus ID</label>
         <Field className="form-control" name="bus_id" type="text" />
@@ -42,7 +48,10 @@ export const BusInfo = ({ setFieldValue }) => {
   );
 };
 
-export const Driver = ({setFieldValue}) => <>
+export const Driver = ({setFieldValue, item}) => <>
+    <div className="d-flex justify-content-center">
+        <img style={{ maxHeight: 200, maxWidth: 200 }} src={`http://${SERVER_ADDED}/images/driver-${item.id}.png?${Date.now()}`} />
+    </div>
     <div className="mb-2">
       <label className="form-label">Driver's Fulname</label>
       <Field className="form-control" name="driver_name" type="text" />
@@ -63,7 +72,10 @@ export const Driver = ({setFieldValue}) => <>
   </>
 
 
-export const Conductor = ({setFieldValue}) => <>
+export const Conductor = ({setFieldValue, item}) => <>
+<div className="d-flex justify-content-center">
+        <img style={{ maxHeight: 200, maxWidth: 200 }} src={`http://${SERVER_ADDED}/images/conductor-${item.id}.png?${Date.now()}`} />
+    </div>
     <div className="mb-2">
       <label className="form-label">Conductor's Fulname</label>
       <Field className="form-control" name="conductor_name" type="text" />

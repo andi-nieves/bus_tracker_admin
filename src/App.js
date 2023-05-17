@@ -36,8 +36,14 @@ function App() {
   const [list, setList] = useState([]);
   const { data, loading } = useQuery(BUS_LIST_QUERY);
   const [createBus, { data: newBus, loading: newLoading, error }] =
-    useMutation(NEW_BUS, { onCompleted: () => setShowForm(null)});
-  const [updateSelected] = useMutation(UPDATE_BUS, { onCompleted: () => setShowForm(null)});
+    useMutation(NEW_BUS, { onCompleted: () => {
+      setShowForm(null)
+      setTab(0)
+    }});
+  const [updateSelected] = useMutation(UPDATE_BUS, { onCompleted: () => {
+    setShowForm(null)
+    setTab(0)
+  }});
   const [deleteBus, { loading: deleteLoading }] = useMutation(DELETE_BUS);
 
   useEffect(() => {
@@ -109,7 +115,7 @@ function App() {
                     role="tabpanel"
                     aria-labelledby="home-tab"
                   >
-                    <BusInfo setFieldValue={setFieldValue} />
+                    <BusInfo item={showForm} setFieldValue={setFieldValue} />
                   </div>}
                   {tab === 1 && <div
                     className="tab-pane fade show active"
@@ -117,7 +123,7 @@ function App() {
                     role="tabpanel"
                     aria-labelledby="profile-tab"
                   >
-                    <Driver setFieldValue={setFieldValue} />
+                    <Driver item={showForm} setFieldValue={setFieldValue} />
                   </div>}
                   {tab === 2 && <div
                     className="tab-pane fade show active"
@@ -125,7 +131,7 @@ function App() {
                     role="tabpanel"
                     aria-labelledby="contact-tab"
                   >
-                    <Conductor setFieldValue={setFieldValue} />
+                    <Conductor item={showForm} setFieldValue={setFieldValue} />
                   </div>}
                 </div>
                 
