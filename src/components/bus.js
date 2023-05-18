@@ -36,7 +36,7 @@ export const BusInfo = ({ setFieldValue, item }) => {
         <Field className="form-control" name="arrival" type="text" />
       </div>
       <div className="mb-2">
-        <label className="form-label">Bus Image</label>
+        <label className="form-label">Upload Photo</label>
         <input
         accept="image/png, image/jpeg"
           className="form-control"
@@ -61,7 +61,7 @@ export const Driver = ({setFieldValue, item}) => <>
       <Field className="form-control" name="driver_contact" type="text" />
     </div>
     <div className="mb-2">
-        <label className="form-label">Bus Image</label>
+        <label className="form-label">Upload Photo</label>
         <input
           accept="image/png, image/jpeg"
           className="form-control"
@@ -85,7 +85,7 @@ export const Conductor = ({setFieldValue, item}) => <>
       <Field className="form-control" name="conductor_contact" type="text" />
     </div>
     <div className="mb-2">
-        <label className="form-label">Bus Image</label>
+        <label className="form-label">Upload Photo</label>
         <input
             accept="image/png, image/jpeg"
           className="form-control"
